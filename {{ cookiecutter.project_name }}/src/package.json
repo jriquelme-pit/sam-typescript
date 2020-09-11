@@ -1,7 +1,7 @@
 {
   "name": "backend-src",
   "version": "1.0.0",
-  "description": "Backend Source Code by {{ cookiecutter.company_acronym }}",
+  "description": "Backend Source Code by {{ cookiecutter.shortname }}",
   "main": "index.ts",
   "scripts": {
     "test": "jest"

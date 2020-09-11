@@ -1,6 +1,6 @@
 {
   "project_name": "Name of the project",
-  "company_acronym" : "Company Acronym",
+  "short_name" : "short name",
   "author": "Author",
   "lambda_name": "Lambda name"
 }
