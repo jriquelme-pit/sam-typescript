@@ -1,0 +1,47 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: 'AWS::Serverless-2016-10-31'
+Description: >
+  Backend SAM TYPESCRIPT
+
+Parameters:
+
+Globals:
+  Function:
+    Runtime: nodejs12.x
+    Timeout: 200
+    MemorySize: 1024
+
+Resources:
+  Api:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: api
+      Name: !Sub ${AWS::StackName}-api
+
+  LambdaLayerLibs:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: !Sub ${AWS::StackName}-lambda-layer
+      Description: Recursos y librerias para las lambdas en Node
+      ContentUri: dist/layers
+      CompatibleRuntimes:
+        - nodejs12.x
+      LicenseInfo: {{ cookiecutter.company_acronym }}
+
+  Dummy:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dist/src
+      Handler: dummy.get
+      Events:
+        Get:
+          Type: Api
+          Properties:
+            RestApiId: !Ref Api
+            Path: /dummy
+            Method: get
+
+Outputs:
+  ApiUrl:
+    Description: URL de la API
+    Value: !Sub https://${Api}.execute-api.${AWS::Region}.amazonaws.com/api

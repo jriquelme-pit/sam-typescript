@@ -1,0 +1,15 @@
+{
+  "name": "backend-libs-{{ cookiecutter.company_acronym }}",
+  "version": "1.0.0",
+  "description": "Backend Libs by {{ cookiecutter.company_acronym }}",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "{{ cookiecutter.author }}",
+  "license": "ISC",
+  "devDependencies": {
+    "aws-sdk": "2.428.0",
+    "@types/aws-lambda": "8.10.34"
+  }
+}
