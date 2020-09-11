@@ -31,8 +31,8 @@ Resources:
   Dummy:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: dist/src
-      Handler: dummy.get
+      CodeUri: dist/src/dummy
+      Handler: dummy.getHello
       Events:
         Get:
           Type: Api
