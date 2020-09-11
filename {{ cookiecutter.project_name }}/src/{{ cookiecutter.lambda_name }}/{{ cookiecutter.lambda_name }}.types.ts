@@ -1,7 +1,7 @@
 import {CustomHandler} from "../../libs";
 
 interface ResponseProps {
-  name: string
+  name: string | any
 }
 
 export type ResponseHandler = CustomHandler<ResponseProps, string>;
