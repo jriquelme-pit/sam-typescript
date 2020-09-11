@@ -1,4 +1,4 @@
-import {CustomHandler} from "../../libs";
+import {CustomHandler} from "libs";
 
 interface ResponseProps {
   name: string | any
