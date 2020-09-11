@@ -1,7 +1,7 @@
 {
   "name": "backend-src",
   "version": "1.0.0",
-  "description": "Backend Source Code by {{ cookiecutter.shortname }}",
+  "description": "Backend Source Code by {{ cookiecutter.short_name }}",
   "main": "index.ts",
   "scripts": {
     "test": "jest"
@@ -11,7 +11,7 @@
   "dependencies": {
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
-    "penta-libs": "file:../libs",
+    "libs": "file:../libs",
     "superagent": "^6.1.0",
     "uuid": "^8.3.0"
   },

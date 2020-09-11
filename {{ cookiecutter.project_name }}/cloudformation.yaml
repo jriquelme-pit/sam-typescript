@@ -26,7 +26,7 @@ Resources:
       ContentUri: dist/layers
       CompatibleRuntimes:
         - nodejs12.x
-      LicenseInfo: {{ cookiecutter.shortname }}
+      LicenseInfo: {{ cookiecutter.short_name }}
 
   Dummy:
     Type: AWS::Serverless::Function
