@@ -2,4 +2,4 @@
 
 
 - sh build.sh
-- sam local invoke Dummy -t cloudformation.yaml
+- sam local invoke Orm -t cloudformation.yaml --docker-network host
