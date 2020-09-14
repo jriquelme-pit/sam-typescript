@@ -10,6 +10,8 @@ Globals:
     Runtime: nodejs12.x
     Timeout: 200
     MemorySize: 1024
+    Layers:
+      - !Ref LambdaLayerLibs
 
 Resources:
   Api:
@@ -17,6 +19,7 @@ Resources:
     Properties:
       StageName: api
       Name: !Sub ${AWS::StackName}-api
+
 
   LambdaLayerLibs:
     Type: AWS::Serverless::LayerVersion
