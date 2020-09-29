@@ -3,7 +3,6 @@ Transform: 'AWS::Serverless-2016-10-31'
 Description: >
   Backend SAM TYPESCRIPT
 
-Parameters:
 
 Globals:
   Function:
@@ -31,11 +30,26 @@ Resources:
         - nodejs12.x
       LicenseInfo: {{ cookiecutter.short_name }}
 
+
+
   Dummy:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: dist/src/dummy
       Handler: dummy.getHello
+      Events:
+        Get:
+          Type: Api
+          Properties:
+            RestApiId: !Ref Api
+            Path: /dummy
+            Method: get
+
+  {{ cookiecutter.project_name }}:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dist/src/{{ cookiecutter.project_name }}
+      Handler: {{ cookiecutter.project_name }}.getHello
       Events:
         Get:
           Type: Api
